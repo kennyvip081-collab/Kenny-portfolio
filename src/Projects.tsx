@@ -9,7 +9,7 @@ export default function Project() {
       tag: 'Hotel Project',
       image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80',
       tools: ['Html', 'CSS', 'Javascript'],
-      link: '#'
+      link: 'https://kenny-vistahotel.netlify.app'
     },
     {
       title: 'Prestige wheels',
