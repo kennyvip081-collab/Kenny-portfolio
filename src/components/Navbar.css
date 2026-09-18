@@ -1,0 +1,276 @@
+/* ==========================================================================
+   KENNY'S PORTFOLIO NAVBAR STYLESHEET (App.css)
+   Pure CSS with :root Variables, Hover Animations, and No JS Logic Required
+   ========================================================================== */
+
+/* 1. Root Design Tokens */
+:root {
+  --primary-color: #38bdf8;
+  --primary-glow: rgba(56, 189, 248, 0.4);
+  --bg-dark: #0b0f19;
+  --nav-bg: rgba(15, 23, 42, 0.82);
+  --nav-border: rgba(255, 255, 255, 0.1);
+  --nav-text: #94a3b8;
+  --nav-text-hover: #ffffff;
+  --nav-hover-bg: rgba(255, 255, 255, 0.08);
+  --nav-active-bg: rgba(56, 189, 248, 0.15);
+  --transition-smooth: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Page baseline for navbar preview */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  font-family: var(--font-family);
+  color: #f8fafc;
+  min-height: 100vh;
+}
+
+/* 2. Fixed Navbar Header */
+.portfolio-navbar {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: 1060px;
+  z-index: 1000;
+}
+
+/* 3. Floating Glass Capsule */
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px 10px 24px;
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--nav-border);
+  border-radius: 9999px;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7),
+              0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+  transition: var(--transition-smooth);
+}
+
+.nav-container:hover {
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8),
+              0 0 28px -4px var(--primary-glow);
+}
+
+/* 4. Brand Logo */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  transition: var(--transition-smooth);
+}
+
+.logo-tag {
+  color: var(--primary-color);
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 1.05rem;
+  transition: var(--transition-smooth);
+}
+
+.nav-logo:hover .logo-tag {
+  transform: rotate(-12deg) scale(1.2);
+  text-shadow: 0 0 12px var(--primary-glow);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #10b981;
+  animation: beaconGlow 2s infinite ease-in-out;
+}
+
+@keyframes beaconGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.45;
+  }
+}
+
+/* 5. Navigation Links List */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 6. Nav Link Hover Animation */
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 8px 18px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--nav-text);
+  text-decoration: none;
+  border-radius: 9999px;
+  transition: var(--transition-smooth);
+  overflow: hidden;
+}
+
+/* Background pill sliding in on hover */
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--nav-hover-bg);
+  border-radius: 9999px;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: var(--transition-smooth);
+  z-index: -1;
+}
+
+.nav-link:hover {
+  color: var(--nav-text-hover);
+  transform: translateY(-1px);
+}
+
+.nav-link:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Glowing underline indicator expanding on hover */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  box-shadow: 0 0 10px var(--primary-glow);
+  border-radius: 4px;
+  transform: translateX(-50%);
+  transition: var(--transition-smooth);
+}
+
+.nav-link:hover::after {
+  width: 20px;
+}
+
+/* Optional Active Link style */
+.nav-link.active {
+  color: #ffffff;
+  background: var(--nav-active-bg);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.nav-link.active::after {
+  width: 24px;
+}
+
+/* 7. Call To Action Button */
+.nav-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 22px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0284c7, #38bdf8);
+  border-radius: 9999px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(56, 189, 248, 0.35);
+  transition: var(--transition-smooth);
+}
+
+.nav-cta-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.55);
+  background: linear-gradient(135deg, #0369a1, #0ea5e9);
+}
+
+/* 8. Pure CSS Mobile Toggle (Zero JS Logic Required) */
+.nav-toggle-checkbox {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  color: #ffffff;
+  font-size: 1.35rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+  user-select: none;
+  transition: var(--transition-smooth);
+}
+
+.nav-toggle-label:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* 9. Responsive Breakpoints */
+@media (max-width: 768px) {
+  .portfolio-navbar {
+    top: 14px;
+    width: calc(100% - 28px);
+  }
+
+  .nav-container {
+    padding: 8px 16px;
+    position: relative;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--nav-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--nav-border);
+    border-radius: 20px;
+    padding: 16px;
+    gap: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+  }
+
+  .nav-cta-btn {
+    display: none;
+  }
+
+  .nav-toggle-label {
+    display: block;
+  }
+
+  /* When checkbox is checked via pure CSS, open the menu */
+  .nav-toggle-checkbox:checked ~ .nav-links {
+    display: flex;
+  }
+}
