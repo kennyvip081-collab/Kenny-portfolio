@@ -46,7 +46,7 @@ export default function Footer() {
 
           <div>
             <h4 className="footer-heading">Get in Touch</h4>
-            <p className="footer-contact-item">Email: hello@kenny.dev</p>
+            <p className="footer-contact-item">Email: hamzatkehinde43@gmail.com</p>
             <p className="footer-contact-item">Location: Worldwide / Remote</p>
             <p className="footer-contact-item">Response Time: Within 24 Hours</p>
           </div>
@@ -62,8 +62,8 @@ export default function Footer() {
                 <span>LinkedIn</span>
                 <span>&rarr;</span>
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link">
-                <span>Twitter / X</span>
+              <a href="https://wa.me/2348142666934" target="_blank" rel="noopener noreferrer" className="social-link">
+                <span>Whatsapp</span>
                 <span>&rarr;</span>
               </a>
             </div>
