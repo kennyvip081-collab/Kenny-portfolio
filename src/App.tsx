@@ -7,6 +7,7 @@ import Home from './Home'
 import Skil from './Skil'
 
 function App() {
+
   return (
     <Router>
       <Navbar />

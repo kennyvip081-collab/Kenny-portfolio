@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import './Experience.css';
 
 export default function Experience() {
@@ -112,8 +113,12 @@ export default function Experience() {
         </div>
 
         <div className="experience-buttons">
-          <a href="#projects" className="btn-primary">View My Projects</a>
-          <a href="#contact" className="btn-secondary">Let's Work Together</a>
+          <Link to="/projects" className="btn-primary">
+            View My Projects
+          </Link>
+          <a href="#contact" className="btn-secondary">
+            Let's Work Together
+          </a>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 export default function Footer() {
@@ -11,8 +12,13 @@ export default function Footer() {
             <p className="footer-cta-subtitle">Building digital experiences that make an impact.</p>
           </div>
           <div className="footer-cta-buttons">
-            <a href="#projects" className="btn-primary">View My Projects</a>
-            <a href="#contact" className="btn-secondary">Let's Work Together</a>
+            <Link to="/projects" className="btn-primary">
+              View My Projects
+            </Link>
+            
+            <a href="#contact" className="btn-secondary">
+              Let's Work Together
+            </a>
           </div>
         </div>
 

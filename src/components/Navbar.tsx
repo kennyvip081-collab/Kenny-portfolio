@@ -1,6 +1,6 @@
 
 import './Navbar.css';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 export default function App() {
   return (
@@ -36,21 +36,36 @@ export default function App() {
         {/* Navigation Links */}
         <ul className="nav-links">
           <li>
-            <Link to="/" className="nav-link active">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? 'nav-link active' : 'nav-link'
+              }
+            >
               Home
-            </Link>
+            </NavLink>
           </li>
 
           <li>
-            <Link to="/projects" className="nav-link">
+            <NavLink
+              to="/projects"
+              className={({ isActive }) =>
+                isActive ? 'nav-link active' : 'nav-link'
+              }
+            >
               Projects
-            </Link>
+            </NavLink>
           </li>
 
           <li>
-            <Link to="/skill" className="nav-link">
+            <NavLink
+              to="/skill"
+              className={({ isActive }) =>
+                isActive ? 'nav-link active' : 'nav-link'
+              }
+            >
               Skills
-            </Link>
+            </NavLink>
           </li>
 
           <li>
@@ -69,4 +84,3 @@ export default function App() {
     </header>
   );
 }
-
