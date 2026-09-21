@@ -3,7 +3,9 @@
   align-items: center;
   justify-content: center;
   padding: 100px 24px;
-  background-color: var(--bg-dark, #0b0f19);
+  background-color: var(--background);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .experience-container {
@@ -21,7 +23,7 @@
   display: inline-block;
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--primary-color, #38bdf8);
+  color: var(--primary-color);
   background-color: rgba(56, 189, 248, 0.1);
   padding: 6px 16px;
   border-radius: 9999px;
@@ -32,14 +34,14 @@
 .experience-title {
   font-size: 2.4rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--text);
   margin: 0 0 12px 0;
   letter-spacing: -0.02em;
 }
 
 .experience-subtitle {
   font-size: 1.05rem;
-  color: var(--nav-text, #94a3b8);
+  color: var(--text-muted);
   margin: 0 auto;
   max-width: 620px;
   line-height: 1.6;
@@ -54,8 +56,8 @@
 
 .stat-card {
   padding: 24px;
-  background-color: var(--nav-bg, rgba(15, 23, 42, 0.82));
-  border: 1px solid var(--nav-border, rgba(255, 255, 255, 0.1));
+  background-color: var(--nav-background);
+  border: 1px solid var(--border);
   border-radius: 20px;
   text-align: center;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
@@ -69,33 +71,33 @@
 }
 
 .stat-card-featured {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(2, 132, 199, 0.25));
+  background: linear-gradient(135deg, var(--nav-background), rgba(2, 132, 199, 0.25));
   border-color: rgba(56, 189, 248, 0.35);
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 25px rgba(56, 189, 248, 0.2);
 }
 
 .stat-card-featured:hover {
   border-color: rgba(56, 189, 248, 0.55);
-  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.7), 0 0 35px var(--primary-glow, rgba(56, 189, 248, 0.4));
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.7), 0 0 35px var(--primary-glow);
 }
 
 .stat-number {
   font-size: 2.4rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--text);
   margin: 0 0 6px 0;
   letter-spacing: -0.02em;
 }
 
 .stat-card-featured .stat-number {
   font-size: 2.8rem;
-  color: var(--primary-color, #38bdf8);
+  color: var(--primary-color);
 }
 
 .stat-label {
   font-size: 0.92rem;
   font-weight: 600;
-  color: var(--nav-text, #94a3b8);
+  color: var(--text-muted);
   margin: 0;
 }
 
@@ -108,8 +110,8 @@
 
 .experience-card {
   padding: 28px;
-  background-color: var(--nav-bg, rgba(15, 23, 42, 0.82));
-  border: 1px solid var(--nav-border, rgba(255, 255, 255, 0.1));
+  background-color: var(--nav-background);
+  border: 1px solid var(--border);
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
   transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
@@ -133,21 +135,21 @@
 .experience-role {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text);
   margin: 0 0 4px 0;
 }
 
 .experience-company {
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--primary-color, #38bdf8);
+  color: var(--primary-color);
   margin: 0;
 }
 
 .experience-badge-date {
   font-size: 0.82rem;
   font-weight: 600;
-  color: var(--primary-color, #38bdf8);
+  color: var(--primary-color);
   background-color: rgba(56, 189, 248, 0.12);
   padding: 6px 14px;
   border-radius: 9999px;
@@ -157,7 +159,7 @@
 
 .experience-desc {
   font-size: 0.96rem;
-  color: var(--nav-text, #94a3b8);
+  color: var(--text-muted);
   line-height: 1.65;
   margin: 0 0 18px 0;
 }
@@ -172,22 +174,22 @@
 .tech-tag {
   font-size: 0.78rem;
   font-weight: 500;
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  background-color: var(--hover-background);
   padding: 4px 12px;
   border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border);
   transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .tech-tag:hover {
   border-color: rgba(56, 189, 248, 0.35);
-  color: var(--primary-color, #38bdf8);
+  color: var(--primary-color);
 }
 
 .strengths-container {
   padding: 30px;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(2, 132, 199, 0.12));
+  background: linear-gradient(135deg, var(--nav-background), rgba(2, 132, 199, 0.12));
   border: 1px solid rgba(56, 189, 248, 0.25);
   border-radius: 20px;
   margin-bottom: 50px;
@@ -196,7 +198,7 @@
 .strengths-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text);
   margin: 0 0 20px 0;
   text-align: center;
 }
@@ -209,21 +211,21 @@
 
 .strength-item {
   padding: 16px;
-  background-color: rgba(15, 23, 42, 0.6);
-  border: 1px solid var(--nav-border, rgba(255, 255, 255, 0.1));
+  background-color: var(--hover-background);
+  border: 1px solid var(--border);
   border-radius: 14px;
 }
 
 .strength-name {
   font-size: 0.98rem;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--text);
   margin: 0 0 6px 0;
 }
 
 .strength-desc {
   font-size: 0.88rem;
-  color: var(--nav-text, #94a3b8);
+  color: var(--text-muted);
   margin: 0;
   line-height: 1.5;
 }
@@ -263,17 +265,17 @@
   padding: 12px 28px;
   font-size: 0.95rem;
   font-weight: 600;
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--nav-border, rgba(255, 255, 255, 0.1));
+  color: var(--text);
+  background: var(--hover-background);
+  border: 1px solid var(--border);
   border-radius: 9999px;
   text-decoration: none;
   transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.25);
+  background: var(--active-background);
+  border-color: rgba(56, 189, 248, 0.4);
   transform: translateY(-2px);
 }
 

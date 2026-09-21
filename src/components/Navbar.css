@@ -1,35 +1,46 @@
-/* ==========================================================================
-   KENNY'S PORTFOLIO NAVBAR STYLESHEET (App.css)
-   Pure CSS with :root Variables, Hover Animations, and No JS Logic Required
-   ========================================================================== */
 
-/* 1. Root Design Tokens */
 :root {
   --primary-color: #38bdf8;
   --primary-glow: rgba(56, 189, 248, 0.4);
-  --bg-dark: #0b0f19;
-  --nav-bg: rgba(15, 23, 42, 0.82);
-  --nav-border: rgba(255, 255, 255, 0.1);
-  --nav-text: #94a3b8;
-  --nav-text-hover: #ffffff;
-  --nav-hover-bg: rgba(255, 255, 255, 0.08);
-  --nav-active-bg: rgba(56, 189, 248, 0.15);
+  --background: #0b0f19;
+  --nav-background: rgba(15, 23, 42, 0.82);
+  --text: #ffffff;
+  --text-muted: #94a3b8;
+  --border: rgba(255, 255, 255, 0.1);
+  --hover-background: rgba(255, 255, 255, 0.08);
+  --active-background: rgba(56, 189, 248, 0.15);
   --transition-smooth: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
 
-/* Page baseline for navbar preview */
+.app.light {
+  --background: #f8fafc;
+  --nav-background: rgba(255, 255, 255, 0.82);
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --border: rgba(15, 23, 42, 0.1);
+  --hover-background: rgba(15, 23, 42, 0.06);
+  --active-background: rgba(56, 189, 248, 0.12);
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--bg-dark);
+  background-color: var(--background);
   font-family: var(--font-family);
-  color: #f8fafc;
+  color: var(--text);
   min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* 2. Fixed Navbar Header */
+.app {
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 .portfolio-navbar {
   position: fixed;
   top: 24px;
@@ -40,29 +51,25 @@ body {
   z-index: 1000;
 }
 
-/* 3. Floating Glass Capsule */
 .nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 18px 10px 24px;
-  background: var(--nav-bg);
+  background: var(--nav-background);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--nav-border);
+  border: 1px solid var(--border);
   border-radius: 9999px;
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7),
-              0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.06) inset;
   transition: var(--transition-smooth);
 }
 
 .nav-container:hover {
   border-color: rgba(56, 189, 248, 0.35);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8),
-              0 0 28px -4px var(--primary-glow);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 28px -4px var(--primary-glow);
 }
 
-/* 4. Brand Logo */
 .nav-logo {
   display: flex;
   align-items: center;
@@ -70,7 +77,7 @@ body {
   text-decoration: none;
   font-size: 1.15rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text);
   letter-spacing: -0.02em;
   transition: var(--transition-smooth);
 }
@@ -108,7 +115,6 @@ body {
   }
 }
 
-/* 5. Navigation Links List */
 .nav-links {
   display: flex;
   align-items: center;
@@ -118,21 +124,19 @@ body {
   padding: 0;
 }
 
-/* 6. Nav Link Hover Animation */
 .nav-link {
   position: relative;
   display: inline-block;
   padding: 8px 18px;
   font-size: 0.92rem;
   font-weight: 500;
-  color: var(--nav-text);
+  color: var(--text-muted);
   text-decoration: none;
   border-radius: 9999px;
   transition: var(--transition-smooth);
   overflow: hidden;
 }
 
-/* Background pill sliding in on hover */
 .nav-link::before {
   content: '';
   position: absolute;
@@ -140,7 +144,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--nav-hover-bg);
+  background: var(--hover-background);
   border-radius: 9999px;
   opacity: 0;
   transform: scale(0.9);
@@ -149,7 +153,7 @@ body {
 }
 
 .nav-link:hover {
-  color: var(--nav-text-hover);
+  color: var(--text);
   transform: translateY(-1px);
 }
 
@@ -158,7 +162,6 @@ body {
   transform: scale(1);
 }
 
-/* Glowing underline indicator expanding on hover */
 .nav-link::after {
   content: '';
   position: absolute;
@@ -177,10 +180,9 @@ body {
   width: 20px;
 }
 
-/* Optional Active Link style */
 .nav-link.active {
-  color: #ffffff;
-  background: var(--nav-active-bg);
+  color: var(--text);
+  background: var(--active-background);
   border: 1px solid rgba(56, 189, 248, 0.25);
 }
 
@@ -188,7 +190,29 @@ body {
   width: 24px;
 }
 
-/* 7. Call To Action Button */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-left: 8px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--hover-background);
+  color: var(--text);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px) scale(1.05);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 15px var(--primary-glow);
+}
+
 .nav-cta-btn {
   display: inline-flex;
   align-items: center;
@@ -212,14 +236,13 @@ body {
   background: linear-gradient(135deg, #0369a1, #0ea5e9);
 }
 
-/* 8. Pure CSS Mobile Toggle (Zero JS Logic Required) */
 .nav-toggle-checkbox {
   display: none;
 }
 
 .nav-toggle-label {
   display: none;
-  color: #ffffff;
+  color: var(--text);
   font-size: 1.35rem;
   cursor: pointer;
   padding: 4px 8px;
@@ -229,10 +252,9 @@ body {
 }
 
 .nav-toggle-label:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--hover-background);
 }
 
-/* 9. Responsive Breakpoints */
 @media (max-width: 768px) {
   .portfolio-navbar {
     top: 14px;
@@ -251,10 +273,10 @@ body {
     left: 0;
     right: 0;
     flex-direction: column;
-    background: var(--nav-bg);
+    background: var(--nav-background);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--nav-border);
+    border: 1px solid var(--border);
     border-radius: 20px;
     padding: 16px;
     gap: 8px;
@@ -269,8 +291,13 @@ body {
     display: block;
   }
 
-  /* When checkbox is checked via pure CSS, open the menu */
+  .theme-toggle {
+    margin-left: auto;
+    margin-right: 8px;
+  }
+
   .nav-toggle-checkbox:checked ~ .nav-links {
     display: flex;
   }
 }
+

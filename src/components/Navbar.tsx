@@ -2,7 +2,12 @@
 import './Navbar.css';
 import { NavLink, Link } from 'react-router-dom';
 
-export default function App() {
+type NavbarProps = {
+  darkMode: boolean;
+  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export default function App({ darkMode, setDarkMode }: NavbarProps) {
   return (
     <header className="portfolio-navbar">
       <nav className="nav-container">
@@ -10,7 +15,7 @@ export default function App() {
         {/* Brand Logo with Availability Status Dot */}
         <a href="#home" className="nav-logo">
           <span className="logo-tag">&lt;</span>
-          <span>Kenny.dev</span>
+          <span>Kenny.dev</span>  
           <span className="logo-tag">/&gt;</span>
           <span
             className="status-dot"
@@ -75,6 +80,16 @@ export default function App() {
           </li>
         </ul>
 
+        {/* Dark / Light Mode Button */}
+        <button
+          className="theme-toggle"
+          onClick={() => setDarkMode(!darkMode)}
+          aria-label="Toggle dark and light mode"
+          title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+        >
+          {darkMode ? '☀️' : '🌙'}
+        </button>
+
         {/* Call To Action Button */}
         <Link to="/#contact" className="nav-cta-btn">
           Hire Me &rarr;
@@ -84,3 +99,4 @@ export default function App() {
     </header>
   );
 }
+
