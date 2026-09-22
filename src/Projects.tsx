@@ -17,7 +17,7 @@ export default function Project() {
       tag: 'Car Website',
       image: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80',
       tools: ['Html5', 'CSS 5', 'Tailwind CSS', 'Three.js'],
-      link: 'https://kennys-carwebsite.netlify.app'
+      link: 'https://prestige-whee.netlify.app'
     },
     {
       title: 'Vip Intelligence Studio',
